@@ -33,8 +33,8 @@ main {
 
 .card-container {
     margin: 2rem;
-    width:  calc(2 * 16rem);
-    height: calc(2 * 9rem);
+    width:  calc(4 * 7rem);
+    height: calc(4 * 5rem);
 }
 
 .card {
