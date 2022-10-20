@@ -31,11 +31,35 @@ main {
     grid-template-rows: repeat(2, 1fr);
 }
 
-.card {
+.card-container {
     margin: 2rem;
     width:  calc(2 * 16rem);
     height: calc(2 * 9rem);
+}
+
+.card {
+    position: relative;
+    width:  100%;
+    height: 100%;
+    color: transparent;
     box-shadow: 2px 4px 8px black;
+    border-radius: 8px;
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transition: transform 1s;
+}
+
+.card.is-flipped {
+    transform: rotateY(-180deg);
+}
+
+.card-face {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -56,6 +80,7 @@ main {
 
 .face-up {
     background-color: white;
+    transform: rotateY(180deg);
 }
 
 button {

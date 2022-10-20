@@ -22,20 +22,31 @@ const Shuffle = (values) => {
         [values[i], values[j]] = [values[j], values[i]];
     }
 }
-
-const IMAGES = IMAGE_URLS.map(url => {
+const GetImage = (url) => {
     const img = new Image();
     img.src = url;
     return img;
-});
+};
+
+const IMAGES = IMAGE_URLS.map(GetImage);
 
 window.onload = () => {
     const cards = [];
     for (let i = 0; i < NUM_CARDS; i += 1) {
         const id = `card-${i}`;
-        const div = document.getElementById(id);
-        const card = { id: id, flipped: false, div: div, img: IMAGES[0], };
-        div.addEventListener("click", () => FlipCard(card));
+
+        const cardDiv = document.getElementById(id);
+        const faceUpDiv = cardDiv.querySelector(".face-up");
+
+        const card = {
+            id: id,
+            flipped: false,
+            cardDiv: cardDiv,
+            faceUpDiv: faceUpDiv,
+        };
+
+        cardDiv.addEventListener("click", () => FlipCard(card));
+
         cards.push(card);
     }
 
@@ -43,9 +54,7 @@ window.onload = () => {
         if (card.flipped == false) {
             console.log(`Flipping ${card.id}`);
             card.flipped = true;
-            card.div.classList.remove("face-down");
-            card.div.classList.add("face-up");
-            card.div.appendChild(card.img);
+            card.cardDiv.classList.add("is-flipped");
         }
     };
 
@@ -62,14 +71,16 @@ window.onload = () => {
             const card = cards[i];
             const img = shuffledImages[i];
 
-            img.width = card.div.clientWidth;
-            img.height = card.div.clientHeight;
+            img.width = card.faceUpDiv.clientWidth;
+            img.height = card.faceUpDiv.clientHeight;
 
-            card.img = img;
             card.flipped = false;
-            card.div.classList.add("face-down");
-            card.div.classList.remove("face-up");
-            card.div.innerHTML = "";
+            card.img = img;
+            card.cardDiv.classList.remove("is-flipped");
+            setTimeout(() => {
+                card.faceUpDiv.innerHTML = "";
+                card.faceUpDiv.appendChild(card.img);
+            }, 500);
         }
     };
 
