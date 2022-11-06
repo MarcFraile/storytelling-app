@@ -159,19 +159,27 @@ window.onload = () => {
         }
     };
 
-    const revealAllButton = document.getElementById("reveal-all");
-    revealAllButton.addEventListener("click", () => {
+    const RevealAll = () => {
         console.log("Revealing all");
         for (let y = 0; y < CARD_ROWS; y += 1) {
             for (let x = 0; x < CARD_COLS; x += 1) {
                 cards[y][x].cardDiv.click();
             }
         }
-    });
+    };
+
+    const revealAllButton = document.getElementById("reveal-all");
+    revealAllButton.addEventListener("click", () => RevealAll());
 
     const shuffleButton = document.getElementById("shuffle");
     console.log(shuffleButton);
     shuffleButton.addEventListener("click", () => ShuffleCards());
+
+    const shuffleRevealButton = document.getElementById("shuffle-reveal");
+    shuffleRevealButton.addEventListener("click", () => {
+        ShuffleCards();
+        setTimeout(() => RevealAll(), 750);
+    });
 
     let next_categories = [];
 
