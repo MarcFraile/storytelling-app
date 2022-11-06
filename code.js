@@ -1,18 +1,103 @@
-const NUM_CARDS = 6;
-const IMAGE_URLS = [
-    "img/castle-on-lake.jpg",
-    "img/city.jpg",
-    "img/cute-cat.jpg",
-    "img/cute-dog.jpg",
-    "img/dinosaurs-and-volcano.jpg",
-    "img/lion.jpg",
-    "img/mountaintops.jpg",
-    "img/pitbull.jpg",
-    "img/rooster.jpg",
-    "img/scared-cat.jpg",
-    "img/spaceship-cockpit.jpg",
-    "img/tropical-beach.jpg",
-];
+const CATEGORY_DATA = {
+    "beach": {
+        "character": [
+            "img/categories/beach/character-children-playing.jpg",
+            "img/categories/beach/character-kid-playing-ball.jpg",
+            "img/categories/beach/character-teen-sunbathing.jpg"
+        ],
+        "object": [
+            "img/categories/beach/object-beach-ball.jpg",
+            "img/categories/beach/object-flipflops.jpg",
+            "img/categories/beach/object-pearl.jpg"
+        ],
+        "place": [
+            "img/categories/beach/place-beach-planks.jpg",
+            "img/categories/beach/place-beach-umbrella.jpg"
+        ]
+    },
+    "fantasy": {
+        "character": [
+            "img/categories/fantasy/character-dark-knight.jpg",
+            "img/categories/fantasy/character-dwarf.jpg",
+            "img/categories/fantasy/character-elf.jpg",
+            "img/categories/fantasy/character-fire-princess.jpg",
+            "img/categories/fantasy/character-goblin.jpg",
+            "img/categories/fantasy/character-wizard.jpg"
+        ],
+        "object": [
+            "img/categories/fantasy/object-armor.jpg",
+            "img/categories/fantasy/object-chest.jpg",
+            "img/categories/fantasy/object-sword-and-shield.jpg"
+        ],
+        "place": [
+            "img/categories/fantasy/place-castle-canyon.jpg",
+            "img/categories/fantasy/place-castle-lake.jpg",
+            "img/categories/fantasy/place-dragon-hoard.jpg"
+        ]
+    },
+    "medicine": {
+        "character": [
+            "img/categories/medicine/character-doctor-female.jpg",
+            "img/categories/medicine/character-doctor-male.jpg",
+            "img/categories/medicine/character-medic-female.jpg",
+            "img/categories/medicine/character-medic-male.jpg"
+        ],
+        "object": [
+            "img/categories/medicine/object-ambulance.jpg",
+            "img/categories/medicine/object-bandaid.jpg",
+            "img/categories/medicine/object-injection.jpg",
+            "img/categories/medicine/object-phonendoscope.jpg",
+            "img/categories/medicine/object-pills.jpg",
+            "img/categories/medicine/object-thermometer.jpg"
+        ],
+        "place": [
+            "img/categories/medicine/place-hospital-inside.jpg",
+            "img/categories/medicine/place-hospital-outside.jpg"
+        ]
+    },
+    "nature": {
+        "character": [
+            "img/categories/nature/character-scout-boy.jpg",
+            "img/categories/nature/character-scout-girl.jpg",
+            "img/categories/nature/character-scout-trooper.jpg"
+        ],
+        "object": [
+            "img/categories/nature/object-axe.jpg",
+            "img/categories/nature/object-hearth.jpg",
+            "img/categories/nature/object-hiking-shoes.jpg",
+            "img/categories/nature/object-tent.jpg"
+        ],
+        "place": [
+            "img/categories/nature/place-desert.jpg",
+            "img/categories/nature/place-jungle.jpg",
+            "img/categories/nature/place-savannah.jpg"
+        ]
+    },
+    "space": {
+        "character": [
+            "img/categories/space/character-alien-saucer.jpg",
+            "img/categories/space/character-astronaut-flag.jpg",
+            "img/categories/space/character-astronaut-spacewalk.jpg",
+            "img/categories/space/character-robot-brain.jpg"
+        ],
+        "object": [
+            "img/categories/space/object-rover.jpg",
+            "img/categories/space/object-satellite.jpg",
+            "img/categories/space/object-ufo.jpg"
+        ],
+        "place": [
+            "img/categories/space/place-cockpit.jpg",
+            "img/categories/space/place-planets.jpg",
+            "img/categories/space/place-space-station.jpg"
+        ]
+    }
+};
+
+const NUM_CATEGORIES = 3;
+const COL_THEMES = [ "place", "character", "character", "object" ];
+
+const CARD_ROWS = NUM_CATEGORIES;
+const CARD_COLS = COL_THEMES.length;
 
 const Interpolate = (a, b, t) => a + (b - a) * t;
 const UniformInt = (min, max) => Math.floor(Interpolate(min, max + 1, Math.random()));
@@ -28,59 +113,111 @@ const GetImage = (url) => {
     return img;
 };
 
-const IMAGES = IMAGE_URLS.map(GetImage);
+const CATEGORIES = {};
+const CATEGORY_KEYS = [];
+
+for (const key in CATEGORY_DATA) {
+    const data = CATEGORY_DATA[key];
+    const category = {};
+
+    for (const type in data) {
+        category[type] = data[type].map(GetImage);
+    }
+
+    CATEGORIES[key] = category;
+    CATEGORY_KEYS.push(key);
+}
 
 window.onload = () => {
     const cards = [];
-    for (let i = 0; i < NUM_CARDS; i += 1) {
-        const id = `card-${i}`;
+    for (let y = 0; y < CARD_ROWS; y += 1) {
+        cards.push([]);
+        for (let x = 0; x < CARD_COLS; x += 1) {
+            const id = `card-r${y}-c${x}`;
 
-        const cardDiv = document.getElementById(id);
-        const faceUpDiv = cardDiv.querySelector(".face-up");
+            const cardDiv = document.getElementById(id);
+            const faceUpDiv = cardDiv.querySelector(".face-up");
 
-        const card = {
-            id: id,
-            flipped: false,
-            cardDiv: cardDiv,
-            faceUpDiv: faceUpDiv,
-        };
+            const card = {
+                id: id,
+                flipped: false,
+                cardDiv: cardDiv,
+                faceUpDiv: faceUpDiv,
+            };
 
-        cardDiv.addEventListener("click", () => FlipCard(card));
+            cardDiv.addEventListener("click", () => FlipCard(card));
 
-        cards.push(card);
+            cards[y].push(card);
+        }
     }
 
     const FlipCard = (card) => {
         if (card.flipped == false) {
-            console.log(`Flipping ${card.id}`);
+            // console.log(`Flipping ${card.id}`);
             card.flipped = true;
             card.cardDiv.classList.add("is-flipped");
         }
     };
 
+    const revealAllButton = document.getElementById("reveal-all");
+    revealAllButton.addEventListener("click", () => {
+        console.log("Revealing all");
+        for (let y = 0; y < CARD_ROWS; y += 1) {
+            for (let x = 0; x < CARD_COLS; x += 1) {
+                cards[y][x].cardDiv.click();
+            }
+        }
+    });
+
     const shuffleButton = document.getElementById("shuffle");
     console.log(shuffleButton);
     shuffleButton.addEventListener("click", () => ShuffleCards());
 
+    let next_categories = [];
+
     const ShuffleCards = () => {
-        console.log("Shuffling");
-        const shuffledImages = [ ...IMAGES ];
-        Shuffle(shuffledImages);
+        console.log("==== Shuffling ====");
 
-        for (let i = 0; i < NUM_CARDS; i += 1) {
-            const card = cards[i];
-            const img = shuffledImages[i];
+        for (let y = 0; y < CARD_ROWS; y += 1) {
+            // FIXME: If we run out of categories halfway through a shuffle, the same category might be chosen twice.
+            //        In that case, cards might be blank if the same image is used more than once (image only gets rendered in the latest location).
+            if (next_categories.length < 1) {
+                next_categories = [ ...CATEGORY_KEYS ];
+                Shuffle(next_categories);
+            }
 
-            img.width = card.faceUpDiv.clientWidth;
-            img.height = card.faceUpDiv.clientHeight;
+            const category = next_categories.pop();
+            console.log(category);
 
-            card.flipped = false;
-            card.img = img;
-            card.cardDiv.classList.remove("is-flipped");
-            setTimeout(() => {
-                card.faceUpDiv.innerHTML = "";
-                card.faceUpDiv.appendChild(card.img);
-            }, 500);
+            // We need to do a deep enough copy of CATEGORIES[category] so that we can shuffle and pop each theme list without affecting the base object.
+            const data = {};
+            for (const theme in CATEGORIES[category]) {
+                data[theme] = [ ...CATEGORIES[category][theme] ];
+            }
+            for (const theme in data) {
+                Shuffle(data[theme]);
+            }
+
+            for (let x = 0; x < CARD_COLS; x += 1) {
+                const theme = COL_THEMES[x];
+
+                const card = cards[y][x];
+                console.log(`Shuffling ${card.id}`);
+                if (data.length < 1) throw Error(`Not enough images. category: ${category}; theme: ${theme}`);
+                const img = data[theme].pop();
+                console.log(`Image URL: ${img.src}`);
+
+                img.width = card.faceUpDiv.clientWidth;
+                img.height = card.faceUpDiv.clientHeight;
+
+                card.flipped = false;
+                card.img = img;
+                card.cardDiv.classList.remove("is-flipped");
+                setTimeout(() => {
+                    card.faceUpDiv.innerHTML = "";
+                    card.faceUpDiv.appendChild(card.img);
+                }, 500);
+            }
         }
     };
 
