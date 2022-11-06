@@ -182,19 +182,27 @@ window.onload = () => {
     });
 
     let next_categories = [];
+    const GetCategory = () => {
+        if (next_categories.length < 1) {
+            next_categories = [ ...CATEGORY_KEYS ];
+            Shuffle(next_categories);
+        }
+        return next_categories.pop();
+    };
 
     const ShuffleCards = () => {
         console.log("==== Shuffling ====");
 
-        for (let y = 0; y < CARD_ROWS; y += 1) {
-            // FIXME: If we run out of categories halfway through a shuffle, the same category might be chosen twice.
-            //        In that case, cards might be blank if the same image is used more than once (image only gets rendered in the latest location).
-            if (next_categories.length < 1) {
-                next_categories = [ ...CATEGORY_KEYS ];
-                Shuffle(next_categories);
-            }
+        const current_categories = [];
 
-            const category = next_categories.pop();
+        for (let y = 0; y < CARD_ROWS; y += 1) {
+
+            // Ensure we don't get repeated categories.
+            let category = GetCategory();
+            while (current_categories.includes(category)) {
+                category = GetCategory();
+            }
+            current_categories.push(category);
             console.log(category);
 
             // We need to do a deep enough copy of CATEGORIES[category] so that we can shuffle and pop each theme list without affecting the base object.
