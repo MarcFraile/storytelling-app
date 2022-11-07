@@ -245,27 +245,25 @@ window.onload = () => {
     const shuffleRevealButton = document.getElementById("shuffle-reveal");
     shuffleRevealButton.addEventListener("click", () => ShuffleAndReveal());
 
-    let next_categories = [];
-    const GetCategory = () => {
-        if (next_categories.length < 1) {
-            next_categories = Shuffled(CATEGORY_KEYS);
-        }
-        return next_categories.pop();
+    // DrawCategories() returns NUM_CATEGORIES category keys, ensuring to not return any of the categories selected in the previous draw.
+    // ASSUMPTION: CATEGORY_KEYS.length > 2 * NUM_CATEGORIES
+    let last_draw = [];
+    const DrawCategories = () => {
+        const candidates = CATEGORY_KEYS.filter(x => !last_draw.includes(x)); // Remove items in last_draw.
+        const shuffled = Shuffled(candidates);
+        const draw = shuffled.slice(0, NUM_CATEGORIES);
+        last_draw = draw;
+        return draw;
     };
 
     const ShuffleCards = () => {
         console.log("==== Shuffling ====");
 
-        const current_categories = [];
+        const categories = DrawCategories();
 
         for (let y = 0; y < CARD_ROWS; y += 1) {
 
-            // Ensure we don't get repeated categories.
-            let category = GetCategory();
-            while (current_categories.includes(category)) {
-                category = GetCategory();
-            }
-            current_categories.push(category);
+            let category = categories[y];
             console.log(category);
 
             // We need to do a deep enough copy of CATEGORIES[category] so that we can shuffle and pop each theme list without affecting the base object.
