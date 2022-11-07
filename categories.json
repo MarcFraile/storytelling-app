@@ -35,6 +35,25 @@
             "img/categories/fantasy/place-dragon-hoard.jpg"
         ]
     },
+    "farm": {
+        "character": [
+            "img/categories/farm/character-feeding.jpg",
+            "img/categories/farm/character-foraging.jpg",
+            "img/categories/farm/character-tilling.jpg",
+            "img/categories/farm/character-truck.jpg",
+            "img/categories/farm/character-watering.jpg"
+        ],
+        "object": [
+            "img/categories/farm/object-spade-fork.jpg",
+            "img/categories/farm/object-tractor.jpg",
+            "img/categories/farm/object-truck.jpg",
+            "img/categories/farm/object-watering-can.jpg"
+        ],
+        "place": [
+            "img/categories/farm/place-farm.jpg",
+            "img/categories/farm/place-field.jpg"
+        ]
+    },
     "halloween": {
         "character": [
             "img/categories/halloween/character-ghosts.jpg",
