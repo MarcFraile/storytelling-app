@@ -96,6 +96,25 @@ const CATEGORY_DATA = {
             "img/categories/medicine/place-hospital-outside.jpg"
         ]
     },
+    "monsters": {
+        "character": [
+            "img/categories/monsters/character-chicken-boy.jpg",
+            "img/categories/monsters/character-mushroom-head.jpg",
+            "img/categories/monsters/character-pyramid-head.jpg",
+            "img/categories/monsters/character-skull-kid.jpg",
+            "img/categories/monsters/character-tea-yeti.jpg",
+            "img/categories/monsters/character-tomato.jpg"
+        ],
+        "object": [
+            "img/categories/monsters/object-tea-foamer.jpg",
+            "img/categories/monsters/object-teacup.jpg",
+            "img/categories/monsters/object-teapot.jpg"
+        ],
+        "place": [
+            "img/categories/monsters/place-mushroom-house.jpg",
+            "img/categories/monsters/place-tree-house.jpg"
+        ]
+    },
     "nature": {
         "character": [
             "img/categories/nature/character-scout-boy.jpg",
