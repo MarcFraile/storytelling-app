@@ -35,6 +35,28 @@
             "img/categories/fantasy/place-dragon-hoard.jpg"
         ]
     },
+    "halloween": {
+        "character": [
+            "img/categories/halloween/character-ghosts.jpg",
+            "img/categories/halloween/character-mummy.jpg",
+            "img/categories/halloween/character-reaper.jpg",
+            "img/categories/halloween/character-werewolf.jpg",
+            "img/categories/halloween/character-zombie.jpg"
+        ],
+        "object": [
+            "img/categories/halloween/object-cauldron.jpg",
+            "img/categories/halloween/object-crystal-ball.jpg",
+            "img/categories/halloween/object-eye-jar.jpg",
+            "img/categories/halloween/object-grave.jpg",
+            "img/categories/halloween/object-hand-jar.jpg",
+            "img/categories/halloween/object-magic-book.jpg",
+            "img/categories/halloween/object-skull.jpg"
+        ],
+        "place": [
+            "img/categories/halloween/place-graveyard.jpg",
+            "img/categories/halloween/place-spooky-house.jpg"
+        ]
+    },
     "medicine": {
         "character": [
             "img/categories/medicine/character-doctor-female.jpg",
