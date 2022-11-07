@@ -161,11 +161,13 @@ const CARD_COLS = COL_THEMES.length;
 
 const Interpolate = (a, b, t) => a + (b - a) * t;
 const UniformInt = (min, max) => Math.floor(Interpolate(min, max + 1, Math.random()));
-const Shuffle = (values) => {
-    for (let i = values.length - 1; i > 0; i--) {
+const Shuffled = (original) => {
+    const copy = [ ...original ];
+    for (let i = copy.length - 1; i > 0; i--) {
         const j = UniformInt(0, i); // i inclusive.
-        [values[i], values[j]] = [values[j], values[i]];
+        [copy[i], copy[j]] = [copy[j], copy[i]];
     }
+    return copy;
 }
 const GetImage = (url) => {
     const img = new Image();
@@ -246,8 +248,7 @@ window.onload = () => {
     let next_categories = [];
     const GetCategory = () => {
         if (next_categories.length < 1) {
-            next_categories = [ ...CATEGORY_KEYS ];
-            Shuffle(next_categories);
+            next_categories = Shuffled(CATEGORY_KEYS);
         }
         return next_categories.pop();
     };
@@ -270,10 +271,7 @@ window.onload = () => {
             // We need to do a deep enough copy of CATEGORIES[category] so that we can shuffle and pop each theme list without affecting the base object.
             const data = {};
             for (const theme in CATEGORIES[category]) {
-                data[theme] = [ ...CATEGORIES[category][theme] ];
-            }
-            for (const theme in data) {
-                Shuffle(data[theme]);
+                data[theme] = Shuffled(CATEGORIES[category][theme]);
             }
 
             for (let x = 0; x < CARD_COLS; x += 1) {
