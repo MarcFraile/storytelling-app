@@ -33,12 +33,15 @@ main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    margin: 2rem;
+    grid-gap: 2rem;
+    justify-items: center;
+    align-items: center;
 }
 
 .card-container {
-    margin: 2rem;
-    width:  calc(3.5 * 7rem);
-    height: calc(3.5 * 5rem);
+    width: calc(7 * min(calc(82vw / (7 * 4)), calc(82vh / (5 * 3))));
+    height: calc(5 * min(calc(82vw / (7 * 4)), calc(82vh / (5 * 3))));
 }
 
 .card {
