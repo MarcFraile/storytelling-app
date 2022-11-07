@@ -168,6 +168,11 @@ window.onload = () => {
         }
     };
 
+    const ShuffleAndReveal = () => {
+        ShuffleCards();
+        setTimeout(() => RevealAll(), 750);
+    };
+
     const revealAllButton = document.getElementById("reveal-all");
     revealAllButton.addEventListener("click", () => RevealAll());
 
@@ -176,10 +181,7 @@ window.onload = () => {
     shuffleButton.addEventListener("click", () => ShuffleCards());
 
     const shuffleRevealButton = document.getElementById("shuffle-reveal");
-    shuffleRevealButton.addEventListener("click", () => {
-        ShuffleCards();
-        setTimeout(() => RevealAll(), 750);
-    });
+    shuffleRevealButton.addEventListener("click", () => ShuffleAndReveal());
 
     let next_categories = [];
     const GetCategory = () => {
@@ -238,4 +240,23 @@ window.onload = () => {
     };
 
     ShuffleCards();
+
+    const buttonContainer = document.getElementById("button-container");
+    document.addEventListener("keyup", (event) => {
+        switch(event.key) {
+            case "Escape":
+                buttonContainer.classList.toggle("hidden");
+                break;
+            case "1":
+                RevealAll();
+                break;
+            case "2":
+                ShuffleCards();
+                break;
+            case "3":
+                ShuffleAndReveal();
+                break;
+        }
+    });
+    console.log("Key bindings:\n - [Esc] toggles UI display.\n - [1] Reveals all cards.\n - [2] Shuffles cards.\n - [3] Shuffles and then reveals.");
 };

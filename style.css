@@ -109,3 +109,7 @@ button:active {
     background-color: rgb(244, 214, 255);
     box-shadow: 1px 2px 2px black;
 }
+
+.hidden {
+    display: none;
+}
