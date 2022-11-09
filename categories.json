@@ -133,6 +133,25 @@
             "img/categories/nature/place-savannah.jpg"
         ]
     },
+    "robots": {
+        "character": [
+            "img/categories/robots/character-angry.jpg",
+            "img/categories/robots/character-blue.jpg",
+            "img/categories/robots/character-cyan.jpg",
+            "img/categories/robots/character-ikea.jpg",
+            "img/categories/robots/character-purple.jpg",
+            "img/categories/robots/character-red.jpg"
+        ],
+        "object": [
+            "img/categories/robots/object-laptop.jpg",
+            "img/categories/robots/object-phone.jpg",
+            "img/categories/robots/object-router.jpg"
+        ],
+        "place": [
+            "img/categories/robots/place-night-city.jpg",
+            "img/categories/robots/place-warehouse.jpg"
+        ]
+    },
     "space": {
         "character": [
             "img/categories/space/character-alien-saucer.jpg",
