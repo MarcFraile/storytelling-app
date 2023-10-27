@@ -18,3 +18,11 @@ Cards can be revealed by pressing them. Pressing the ESC key shows or hides UI b
 * Pressing [1] or "Reveal All" reveals all cards (flips them to the picture side).
 * Pressing [2] or "Shuffle" hides all cards and fetches new ones.
 * Pressing [3] or "Shuffle and Reveal" combines the two previous actions: it hides the cards, fetches new ones, and then reveals all cards.
+
+## Running Locally
+
+You only need to serve the files in the repository! My favorite is running this command from the repository's top directory:
+
+```sh
+python -m http.server
+```
