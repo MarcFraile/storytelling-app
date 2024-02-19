@@ -63,6 +63,18 @@ Please note that the free-to-use images require attribution, according to the Fr
 | img/categories/halloween/object-skull.jpg | pikisuperstar | |
 | img/categories/halloween/place-graveyard | upklyak | https://www.freepik.com/free-vector/cemetery-with-ghosts-night_12620559.htm |
 | img/categories/halloween/place-spooky-house.jpg | upklyak | |
+| img/categories/medicine/character-doctor-female.jpg | pikisuperstar | |
+| img/categories/medicine/character-doctor-male.jpg | pikisuperstar | |
+| img/categories/medicine/character-medic-female.jpg | pikisuperstar | |
+| img/categories/medicine/character-medic-male.jpg | pikisuperstar | |
+| img/categories/medicine/object-ambulance.jpg | macrovector | |
+| img/categories/medicine/object-bandaid.jpg | macrovector_official | |
+| img/categories/medicine/object-injection.jpg | macrovector_official | |
+| img/categories/medicine/object-phonendoscope.jpg | Katemangostar | |
+| img/categories/medicine/object-pills.jpg | macrovector | |
+| img/categories/medicine/object-thermometer.jpg | rawpixel.com | https://www.freepik.com/free-vector/digital-thermometer-38-5-degrees-celsius-element_16435892.htm |
+| img/categories/medicine/place-hospital-inside.jpg | Freepik | |
+| img/categories/medicine/place-hospital-outside.jpg | pch.vector | |
 | img/categories/nature/character-scout-boy.jpg | brgfx | https://www.freepik.com/free-vector/cute-boy-girl-scout-white-background_26214892.htm |
 | img/categories/nature/character-scout-girl.jpg | brgfx | https://www.freepik.com/free-vector/cute-boy-girl-scout-white-background_26214892.htm |
 | img/categories/nature/character-scout-trooper.jpg | brgfx | https://www.freepik.com/free-vector/cute-boy-girl-scout-white-background_26214892.htm |
