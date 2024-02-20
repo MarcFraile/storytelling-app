@@ -96,3 +96,14 @@ Please note that the free-to-use images require attribution, according to the Fr
 | img/categories/nature/place-desert.jpg | upklyak | https://www.freepik.com/free-vector/egypt-pyramids-nile-river-dusk-desert_12900177.htm |
 | img/categories/nature/place-jungle.jpg | pikisuperstar | https://www.freepik.com/free-vector/cartoon-jungle-background_14351507.htm |
 | img/categories/nature/place-savannah.jpg | macrovector | |
+| img/categories/robots/character-angry.jpg | Freepik | |
+| img/categories/robots/character-blue.jpg | Freepik | |
+| img/categories/robots/character-cyan.jpg | Freepik | |
+| img/categories/robots/character-ikea.jpg | Freepik | |
+| img/categories/robots/character-purple.jpg | Freepik | |
+| img/categories/robots/character-red.jpg | Freepik | |
+| img/categories/robots/object-laptop.jpg | macrovector | |
+| img/categories/robots/object-phone.jpg | macrovector | |
+| img/categories/robots/object-router.jpg | macrovector | |
+| img/categories/robots/place-night-city.jpg | vectorpocket | |
+| img/categories/robots/place-warehouse.jpg | upklyak | https://www.freepik.com/free-vector/robots-warehouse-interior-automated-machines_32117680.htm |
