@@ -1,6 +1,6 @@
 # Storytelling App
 
-This repository contains a simple web app (no dependencies) that acts as a virtual tabletop for a collaborative storytelling game. It was used as part of research at the [Uppsala Social Robotics Lab](https://usr-lab.github.io/) in 2023 by Marc Fraile and other researchers.
+This repository contains a simple web app (no dependencies) that acts as a virtual tabletop for a collaborative storytelling game. It was used as part of research at the [Uppsala Social Robotics Lab](https://usr-lab.github.io/) in 2023 by [Marc Fraile](https://marcfraile.github.io) and other researchers.
 
 ## The Game
 
