@@ -107,3 +107,13 @@ Please note that the free-to-use images require attribution, according to the Fr
 | img/categories/robots/object-router.jpg | macrovector | |
 | img/categories/robots/place-night-city.jpg | vectorpocket | |
 | img/categories/robots/place-warehouse.jpg | upklyak | https://www.freepik.com/free-vector/robots-warehouse-interior-automated-machines_32117680.htm |
+| img/categories/space/character-alien-saucer.jpg | pikisuperstar | https://www.freepik.com/free-vector/retro-cartoon-science-fiction-sticker-collection_18776553.htm |
+| img/categories/space/character-astronaut-flag.jpg | macrovector | https://www.freepik.com/free-vector/space-isometric-set_26766186.htm |
+| img/categories/space/character-astronaut-spacewalk.jpg | macrovector | https://www.freepik.com/free-vector/space-isometric-set_26766186.htm |
+| img/categories/space/character-robot-brain.jpg | pikisuperstar | https://www.freepik.com/free-vector/retro-cartoon-science-fiction-sticker-collection_18776553.htm |
+| img/categories/space/object-rover.jpg | macrovector | https://www.freepik.com/free-vector/space-isometric-set_26766186.htm |
+| img/categories/space/object-satellite.jpg | macrovector | https://www.freepik.com/free-vector/space-isometric-set_26766186.htm |
+| img/categories/space/object-ufo.jpg | upklyak | https://www.freepik.com/free-vector/alien-space-ships-cartoon-ufo-saucers-rockets_32665705.htm |
+| img/categories/space/place-cockpit.jpg | vectorpouch | |
+| img/categories/space/place-planets.jpg | upklyak | |
+| img/categories/space/place-space-station.jpg | vectorpocket | |
