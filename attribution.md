@@ -75,6 +75,17 @@ Please note that the free-to-use images require attribution, according to the Fr
 | img/categories/medicine/object-thermometer.jpg | rawpixel.com | https://www.freepik.com/free-vector/digital-thermometer-38-5-degrees-celsius-element_16435892.htm |
 | img/categories/medicine/place-hospital-inside.jpg | Freepik | |
 | img/categories/medicine/place-hospital-outside.jpg | pch.vector | |
+| img/categories/monsters/character-chicken-boy.jpg | upklyak | https://www.freepik.com/free-vector/cute-monsters-trendy-contemporary-art-style_28590676.htm |
+| img/categories/monsters/character-mushroom-head.jpg | upklyak | https://www.freepik.com/free-vector/cute-monsters-trendy-contemporary-art-style_28590676.htm |
+| img/categories/monsters/character-pyramid-head.jpg | upklyak | https://www.freepik.com/free-vector/cute-monsters-trendy-contemporary-art-style_28590676.htm |
+| img/categories/monsters/character-skull-kid.jpg | upklyak | https://www.freepik.com/free-vector/cute-monsters-trendy-contemporary-art-style_28590676.htm |
+| img/categories/monsters/character-tea-yeti.jpg | upklyak | https://www.freepik.com/free-vector/cute-monsters-trendy-contemporary-art-style_28590676.htm |
+| img/categories/monsters/character-tomato.jpg | upklyak | https://www.freepik.com/free-vector/cute-monsters-trendy-contemporary-art-style_28590676.htm |
+| img/categories/monsters/object-tea-foamer.jpg | macrovector | |
+| img/categories/monsters/object-teacup.jpg | macrovector | |
+| img/categories/monsters/object-teapot.jpg | macrovector | |
+| img/categories/monsters/place-mushroom-house.jpg | brgfx | |
+| img/categories/monsters/place-tree-house.jpg | brgfx | https://www.freepik.com/free-vector/forest-scene-with-tree-house-inside-tree-trunk_21197606.htm |
 | img/categories/nature/character-scout-boy.jpg | brgfx | https://www.freepik.com/free-vector/cute-boy-girl-scout-white-background_26214892.htm |
 | img/categories/nature/character-scout-girl.jpg | brgfx | https://www.freepik.com/free-vector/cute-boy-girl-scout-white-background_26214892.htm |
 | img/categories/nature/character-scout-trooper.jpg | brgfx | https://www.freepik.com/free-vector/cute-boy-girl-scout-white-background_26214892.htm |
